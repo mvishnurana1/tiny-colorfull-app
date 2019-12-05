@@ -1,4 +1,5 @@
 .Box {
     width:  10em; 
     height: 20ex; 
+    border: 0.5px solid black; 
 }

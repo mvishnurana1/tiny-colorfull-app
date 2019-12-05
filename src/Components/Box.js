@@ -1,27 +1,33 @@
 import React, { Component } from 'react'; 
-import { randomColor as Choice} from './Helper'; 
+import { randomRgbNumberGenerator as randColor} from './Helper'; 
 import './Box.css'; 
 
 class Box extends Component {
     static defaultProps = {
-        allColors: ["purple", "magenta", "violet", "pink"] 
+        allColors: ["purple", "magenta", "violet", "blue", "red", "green"] 
     }; 
     constructor(props){
         super(props);
-        this.state = { color: "purple" };
+        this.state = { color: `pink` };
         this.ClickHandler = this.ClickHandler.bind(this);  
     }
 
+    /**
+     * 
+     */
     pickColor(){
-        let newColor; 
+        
+        let r = randColor(),  
+            g = randColor(), 
+            b = randColor(); 
 
-        do{
-            newColor = Choice(this.props.allColors);
-        }while(newColor === this.state.color); 
-
-        this.setState({ color: newColor }); 
+        console.log(`${r}, ${g}, ${b}`); 
+        this.setState({ color: `rgb(${r}, ${g}, ${b})` }); 
     }
 
+    /**
+     * 
+     */
     ClickHandler() {
         this.pickColor(); 
     }
@@ -31,9 +37,7 @@ class Box extends Component {
             <div 
                 className="Box"
                 style={{ backgroundColor: this.state.color }}
-                onClick={this.ClickHandler}
-                >
-                
+                onClick={this.ClickHandler}>
             </div>
         ); 
     }

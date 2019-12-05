@@ -1,15 +1,12 @@
 /**
- * The function returns a random RGB Value 
- * for colouring boxes
+ * The function returns a random RGB value i.e. 
+ * an integer ranging between 1 - 255
  */
-
-let randomColor = (arr) => {
-    let randomIndex = Math.floor(Math.random() * arr.length); 
-    return arr[randomIndex]; 
-}
-
-const randomRGBnumberGenerator = () => {
+const randomRgbNumberGenerator = () => {
     return Math.floor(Math.random() * 255); 
 }
 
-export { randomColor }; 
+/**
+ * The module exports the function
+ */
+export { randomRgbNumberGenerator }; 
