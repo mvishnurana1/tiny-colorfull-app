@@ -1,3 +1,7 @@
+The app render a Box Component 360 times on the UI. 
+
+Each box is pink by default, however, onClicking on the Box; the colour changes and two simultaneous clicks on the box never return the same color. 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
